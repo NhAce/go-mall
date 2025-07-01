@@ -21,10 +21,16 @@ func main() {
 	//slice 支持通过 slice[low:high] 语法进行“切片”操作。 例如，右边的操作可以得到一个包含元素 s[2]、s[3] 和 s[4] 的 slice
 	l := s[2:5]
 	fmt.Println("sl1:",l)
+	fmt.Println("length:",len(l))
+	fmt.Println("capacity:",cap(l))
+	l = l[:cap(l)]
+	fmt.Println("new length:",len(l))
+	fmt.Println("new capacity:",cap(l))
 
 	//这个 slice 包含从 s[0] 到 s[5]（不包含 5）的元素
 	l = s[:5]
 	fmt.Println("sl2:",l)
+
 	//这个 slice 包含从 s[2]（包含 2）之后的元素。
 	l = s[2:]
 	fmt.Println("sl3:",l)
